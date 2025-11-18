@@ -1,0 +1,47 @@
+name: Create Tenant Folders
+on: [push]
+jobs:
+  create-folders:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create all tenant folders
+        run: |
+          mkdir -p "1_Color_Chacha"/{"1.入場文件","2.營運及裝修文件","3.出場還原文件"}
+          mkdir -p "2_Mountain_Café"/{"1.入場文件","2.營運及裝修文件","3.出場還原文件"}
+          mkdir -p "3_華星冰室_Chrisly_Café"/{"1.入場文件","2.營運及裝修文件","3.出場還原文件"}
+          mkdir -p "4_Vacant_即將開幕"/{"1.入場文件","2.營運及裝修文件","3.出場還原文件"}
+          mkdir -p "5_滿記甜品_Honeymoon_Dessert"/{"1.入場文件","2.營運及裝修文件","3.出場還原文件"}
+          mkdir -p "6_松坂壽司_Matuszaka_Express"/{"1.入場文件","2.營運及裝修文件","3.出場還原文件"}
+          mkdir -p "7_逢鼎記_Bachelor_Tea_Dim_Sum"/{"1.入場文件","2.營運及裝修文件","3.出場還原文件"}
+          mkdir -p "8_Dolce_Wonderland"/{"1.入場文件","2.營運及裝修文件","3.出場還原文件"}
+          mkdir -p "9A_Ebeneezer's_Kebabs"/{"1.入場文件","2.營運及裝修文件","3.出場還原文件"}
+          mkdir -p "9B_Subway"/{"1.入場文件","2.營運及裝修文件","3.出場還原文件"}
+          mkdir -p "10_星巴克_Starbucks"/{"1.入場文件","2.營運及裝修文件","3.出場還原文件"}
+          mkdir -p "11_小食堡_Burger_Café"/{"1.入場文件","2.營運及裝修文件","3.出場還原文件"}
+          mkdir -p "12_180_Popcorn_Playful_Oh_my_ink"/{"1.入場文件","2.營運及裝修文件","3.出場還原文件"}
+          mkdir -p "13_鴻福珍珠_Hung_Fook_Pearl"/{"1.入場文件","2.營運及裝修文件","3.出場還原文件"}
+          mkdir -p "14_中國藝術之窗"/{"1.入場文件","2.營運及裝修文件","3.出場還原文件"}
+          mkdir -p "15_夢斯曼銀屋_Masermy_Silver"/{"1.入場文件","2.營運及裝修文件","3.出場還原文件"}
+          mkdir -p "16A_片刻時光_Pick_Light"/{"1.入場文件","2.營運及裝修文件","3.出場還原文件"}
+          mkdir -p "16B_伯虎涼果"/{"1.入場文件","2.營運及裝修文件","3.出場還原文件"}
+          mkdir -p "17_筷の藝_Chopstick_Gallery"/{"1.入場文件","2.營運及裝修文件","3.出場還原文件"}
+          mkdir -p "18_木屋_Wooden_House"/{"1.入場文件","2.營運及裝修文件","3.出場還原文件"}
+          mkdir -p "19_水晶森林_Crystal_Forest"/{"1.入場文件","2.營運及裝修文件","3.出場還原文件"}
+          mkdir -p "20_招財貓_Lucky_Cat"/{"1.入場文件","2.營運及裝修文件","3.出場還原文件"}
+          mkdir -p "21_7-Eleven"/{"1.入場文件","2.營運及裝修文件","3.出場還原文件"}
+          mkdir -p "22_Iris_Galerie"/{"1.入場文件","2.營運及裝修文件","3.出場還原文件"}
+          mkdir -p "23-25_港呢啲_HONGKONG_Souvenir"/{"1.入場文件","2.營運及裝修文件","3.出場還原文件"}
+          mkdir -p "昂坪360禮品店"/{"1.入場文件","2.營運及裝修文件","3.出場還原文件"}
+          mkdir -p "與佛同行禮品店"/{"1.入場文件","2.營運及裝修文件","3.出場還原文件"}
+          mkdir -p "360動感影院禮品店"/{"1.入場文件","2.營運及裝修文件","3.出場還原文件"}
+          mkdir -p "纜車探知館"/{"1.入場文件","2.營運及裝修文件","3.出場還原文件"}
+          mkdir -p "Motion_360"/{"1.入場文件","2.營運及裝修文件","3.出場還原文件"}
+          mkdir -p "三國風雲館"/{"1.入場文件","2.營運及裝修文件","3.出場還原文件"}
+      - name: Commit folders
+        run: |
+          git config user.name "NPV Property"
+          git config user.email "property@npv360.com"
+          git add .
+          git commit -m "Auto create all tenant folders" || echo "Nothing to commit"
+          git push
